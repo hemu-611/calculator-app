@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Scientific Calculator</h1>
+    </header>
+
+    <main class="app-main">
+      <!-- Calculator panel -->
+      <section class="calc-panel">
+        <div class="display">
+          <div class="display-expr" id="display-expr">&nbsp;</div>
+          <div class="display-result" id="display-result">0</div>
+        </div>
+
+        <div class="keypad">
+          <!-- Row 1: clear / backspace / parens / power -->
+          <button class="btn btn-action" data-action="clear">C</button>
+          <button class="btn btn-action" data-action="backspace">⌫</button>
+          <button class="btn btn-op" data-insert="(">(</button>
+          <button class="btn btn-op" data-insert=")">)</button>
+
+          <!-- Row 2: scientific -->
+          <button class="btn btn-sci" data-insert="sqrt(">√</button>
+          <button class="btn btn-sci" data-insert="cbrt(">∛</button>
+          <button class="btn btn-sci" data-insert="**2">x²</button>
+          <button class="btn btn-sci" data-insert="**">xʸ</button>
+
+          <!-- Row 3: trig -->
+          <button class="btn btn-sci" data-insert="sin(">sin</button>
+          <button class="btn btn-sci" data-insert="cos(">cos</button>
+          <button class="btn btn-sci" data-insert="tan(">tan</button>
+          <button class="btn btn-sci" data-insert="log(">log</button>
+
+          <!-- Row 4: more sci -->
+          <button class="btn btn-sci" data-insert="sind(">sin°</button>
+          <button class="btn btn-sci" data-insert="cosd(">cos°</button>
+          <button class="btn btn-sci" data-insert="tand(">tan°</button>
+          <button class="btn btn-sci" data-insert="log10(">log₁₀</button>
+
+          <!-- Row 5: constants + percent -->
+          <button class="btn btn-const" data-insert="pi">π</button>
+          <button class="btn btn-const" data-insert="e">e</button>
+          <button class="btn btn-sci" data-insert="factorial(">n!</button>
+          <button class="btn btn-op" data-insert="%">%</button>
+
+          <!-- Row 6: 7 8 9 / -->
+          <button class="btn btn-num" data-insert="7">7</button>
+          <button class="btn btn-num" data-insert="8">8</button>
+          <button class="btn btn-num" data-insert="9">9</button>
+          <button class="btn btn-op" data-insert="/">/</button>
+
+          <!-- Row 7: 4 5 6 * -->
+          <button class="btn btn-num" data-insert="4">4</button>
+          <button class="btn btn-num" data-insert="5">5</button>
+          <button class="btn btn-num" data-insert="6">6</button>
+          <button class="btn btn-op" data-insert="*">×</button>
+
+          <!-- Row 8: 1 2 3 - -->
+          <button class="btn btn-num" data-insert="1">1</button>
+          <button class="btn btn-num" data-insert="2">2</button>
+          <button class="btn btn-num" data-insert="3">3</button>
+          <button class="btn btn-op" data-insert="-">−</button>
+
+          <!-- Row 9: 0 . = + -->
+          <button class="btn btn-num btn-zero" data-insert="0">0</button>
+          <button class="btn btn-num" data-insert=".">.</button>
+          <button class="btn btn-equals" data-action="evaluate">=</button>
+          <button class="btn btn-op" data-insert="+">+</button>
+        </div>
+      </section>
+
+      <!-- History panel -->
+      <aside class="history-panel">
+        <div class="history-header">
+          <h2>History</h2>
+          <button class="btn-clear-history" id="btn-clear-history">Clear</button>
+        </div>
+        <ul class="history-list" id="history-list">
+          <li class="history-empty">No calculations yet</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
